@@ -20,6 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        "calculate_intersection = markar_localization.calculate_position_based_on_2_markers:main",
+        "imu_to_yaw = markar_localization.imu_to_yaw:main",
+        "yaw_based_position = markar_localization.calculate_position_based_on_yaw:main",
         ],
     },
 )

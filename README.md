@@ -108,3 +108,37 @@ The process is as follows:
    - This local position is then transformed into the global coordinate system using the current yaw from the IMU.
 
 This approach enables robust and continuous localization with only one visible landmark, leveraging the IMU to maintain orientation awareness and accurately convert between coordinate systems.
+
+## Code Structure
+
+This repository contains two main Python files implementing the described localization approaches:
+
+- **`calculate_position_based_on_2_markers.py`**  
+  Implements the solution using two ArUco markers (landmarks) for rover localization.
+
+- **`calculate_position_based_on_yaw.py`**  
+  Implements the solution using one ArUco marker (landmark) and IMU yaw data for localization.
+
+### Landmark Coordinates
+
+The global coordinates of each landmark (ArUco marker) are defined in a dictionary within the code:
+
+```python
+points_dict = {
+    # Marker_ID: [Coordinates]
+    "51": [5.96, 2.009],
+    "52": [-3.632, 7.469],
+    "53": [2.464, 5.984],
+    "54": [4.163, 12.066],
+    "55": [-1.854, 15.088],
+    "56": [-1.73, 22.246],
+    "57": [3.205, 22.268],
+    "58": [6.863, 26.711],
+    "59": [7.905, 21.371],
+    "60": [3.876, 18.039],
+    "61": [6.598, 14.024],
+    "62": [11.656, 13.19],
+    "63": [6.086, 8.967],
+    "64": [13.864, 6.67],
+    "65": [13.804, 1.249],
+}
