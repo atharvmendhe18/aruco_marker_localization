@@ -111,7 +111,14 @@ This approach enables robust and continuous localization with only one visible l
 
 ## Code Structure
 
-This repository contains two main Python files implementing the described localization approaches:
+This repository contains the following main Python files for ArUco-based rover localization:
+
+- **`aruco_marker_detection.py`**  
+  Handles ArUco marker detection, pose estimation, and publishing marker transforms and positions.  
+  - Change `self.marker_size` for your marker size (meters).
+  - Change the camera topic in the `self.image_sub` subscription.
+  - Change the camera frame in `transform_msg.header.frame_id`.
+  - Update `self.camera_matrix` and `self.dist_coeffs` for your camera calibration.
 
 - **`calculate_position_based_on_2_markers.py`**  
   Implements the solution using two ArUco markers (landmarks) for rover localization.
@@ -125,7 +132,6 @@ The global coordinates of each landmark (ArUco marker) are defined in a dictiona
 
 ```python
 points_dict = {
-    # Marker_ID: [Coordinates]
     "51": [5.96, 2.009],
     "52": [-3.632, 7.469],
     "53": [2.464, 5.984],
