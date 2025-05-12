@@ -85,3 +85,26 @@ In this approach, the rover's position is determined using at least **two detect
    </p>
 
 This method ensures robust localization by leveraging geometric relationships and known landmark positions.
+
+## Solution 2: Localization Using One ArUco Marker and IMU
+
+In this approach, the rover's position can be determined using just **one detected ArUco marker (landmark)**, provided that IMU data is available and the relationship between the global and local coordinate systems is established at the start of the operation.
+
+The key difference from the first approach is that, previously, two markers were required to determine the relationship between the rover's local and the global coordinate systems. In this method, the **yaw data from the IMU** is used to continuously track the orientation and maintain the relationship between the local and global frames.
+
+The process is as follows:
+
+1. **Initialization:**  
+   - At the start, the relationship between the global and local coordinate systems is established (e.g., by aligning the rover and recording the initial yaw).
+
+2. **Marker Detection:**  
+   - When a single ArUco marker is detected, its position is converted into the rover's local coordinate frame.
+
+3. **IMU Integration:**  
+   - The IMU provides the current yaw (orientation) of the rover, allowing for accurate transformation between local and global coordinates throughout the operation.
+
+4. **Position Calculation:**  
+   - Using the known global position of the detected landmark and the observed local position (distance and angle from the rover), the rover's position is calculated in the local frame.
+   - This local position is then transformed into the global coordinate system using the current yaw from the IMU.
+
+This approach enables robust and continuous localization with only one visible landmark, leveraging the IMU to maintain orientation awareness and accurately convert between coordinate systems.
