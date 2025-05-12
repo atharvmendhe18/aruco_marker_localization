@@ -164,3 +164,26 @@ To see the system in action, watch the demonstration video:
 
 ---
 
+## Dependencies
+
+To run this project, ensure you have the following dependencies installed:
+
+- **Python 3.8**
+- **ROS 2 Humble** (or compatible ROS 2 distribution)
+- **OpenCV** (`opencv-python`)
+- **NumPy** (`numpy`)
+- **cv_bridge**
+- **Pillow** (`PIL`)
+- **matplotlib**
+- **rclpy**
+- **sensor_msgs** (ROS 2 message package)
+- **geometry_msgs** (ROS 2 message package)
+- **std_msgs** (ROS 2 message package)
+- **tf_transformations**
+- **tf2_ros**
+
+### Installation
+
+Install Python dependencies:
+```bash
+pip install numpy==1.26.4 opencv-python pillow matplotlib
