@@ -148,3 +148,19 @@ points_dict = {
     "64": [13.864, 6.67],
     "65": [13.804, 1.249],
 }
+```
+## Demo Video
+
+To see the system in action, watch the demonstration video:
+
+<p align="center">
+  <b>ArUco Marker Localization Demo</b><br>
+  <a href="https://drive.google.com/file/d/1kRtD-9vlsoaHnq8T8EvH14VKiCUsjrLH/view?usp=sharing" target="_blank">
+    <img src="images/thubmbail.png" alt="Demo Video" width="500">
+  </a>
+</p>
+
+*Click the image above or [this link](https://drive.google.com/file/d/1kRtD-9vlsoaHnq8T8EvH14VKiCUsjrLH/view?usp=sharing) to view the video.*
+
+---
+
